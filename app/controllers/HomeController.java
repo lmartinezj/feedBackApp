@@ -31,8 +31,9 @@ public class HomeController extends Controller {
     }
 
     public Result feedback(Http.Request request) {
-            JsonNode json = request.body().asJson();
-            return ok("Got token: " + json.asText());
+        JsonNode json = request.body().asJson();
+        //System.out.println(json);
+        return ok("Got token: " + json.asText());
     }
 
     public static String calculateAuthorizationHeaderValue(String clientSecret, String bindIdAccessToken)
