@@ -32,7 +32,7 @@ public class HomeController extends Controller {
 
     public Result feedback(Http.Request request) {
             JsonNode json = request.body().asJson();
-            return ok("Got token: " + json.get("access_token").asText());
+            return ok("Got token: " + json.asText());
     }
 
     public static String calculateAuthorizationHeaderValue(String clientSecret, String bindIdAccessToken)
